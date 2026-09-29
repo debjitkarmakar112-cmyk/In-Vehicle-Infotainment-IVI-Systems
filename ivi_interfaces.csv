@@ -1,0 +1,20 @@
+interface_id,source_id,target_id,link_type,direction,interface,label,protocol,data_carried
+I01,IN1,APP_MEDIA,vertical,down,Input events,Input events,InputManager,"Touch, voice and steering-key events"
+I02,IN1,APP_NAV,vertical,down,Input events,Input events,InputManager,"Touch, voice and steering-key events"
+I03,IN1,APP_PROJ,vertical,down,Input events,Input events,InputManager,"Touch, voice and steering-key events"
+I04,IN1,APP_SYS,vertical,down,Input events,Input events,InputManager,"Touch, voice and steering-key events"
+I05,APP_MEDIA,SVC_MEDIA,vertical,bidirectional,MediaBrowser / MediaController,MediaBrowser / MediaController,Binder IPC,"Browse, play, pause, next, metadata"
+I06,APP_NAV,SVC_NAV,vertical,bidirectional,LocationManager API,LocationManager API,Binder IPC,"Location updates, route progress"
+I07,APP_PROJ,SVC_PROJ,vertical,bidirectional,Projection session API,Projection session API,Binder IPC / sockets,"Video frames, touch events"
+I08,APP_SYS,SVC_CAR,vertical,bidirectional,Car API (android.car),Car API (android.car),Binder IPC,"Vehicle state, settings"
+I09,SVC_MEDIA,HAL_AUDIO,vertical,bidirectional,Audio HAL,Audio HAL,AIDL,"PCM streams, volume, routing"
+I10,SVC_NAV,HAL_GNSS,vertical,bidirectional,GNSS HAL,GNSS HAL,AIDL,"Position fixes, NMEA sentences"
+I11,SVC_PROJ,HAL_CONN,vertical,bidirectional,USB / Wi-Fi / BT stack,USB / Wi-Fi / BT stack,"USB AOA, Wi-Fi, BT","Video, audio and input packets"
+I12,SVC_CAR,HAL_VHAL,vertical,bidirectional,Vehicle HAL,Vehicle HAL,AIDL,Vehicle property get/set/subscribe
+I13,HAL_AUDIO,HW_AUDIO,vertical,bidirectional,I2S / TDM,I2S / TDM,I2S,PCM audio samples
+I14,HAL_GNSS,HW_GPS,vertical,bidirectional,UART,UART,UART / NMEA,Raw GNSS data
+I15,HAL_CONN,HW_PHONE,vertical,bidirectional,USB / Wi-Fi link,USB / Wi-Fi link,USB / Wi-Fi,Projection stream
+I16,HAL_VHAL,HW_CAN,vertical,bidirectional,CAN frames,CAN frames,CAN,"Speed, gear, ignition frames"
+I17,SVC_MEDIA,SVC_CAR,cross,bidirectional,Audio focus,Audio focus,Binder IPC,"Focus request, loss and abandon callbacks"
+I18,SVC_NAV,SVC_CAR,cross,bidirectional,Audio focus,Audio focus,Binder IPC,Guidance prompt focus request
+I19,SVC_PROJ,SVC_CAR,cross,bidirectional,Audio focus,Audio focus,Binder IPC,Call and voice focus request

@@ -1,0 +1,23 @@
+scenario_id,scenario,step,source_id,target_id,message,assumed_latency_ms
+S1,Play a song from the touchscreen,1,IN1,APP_MEDIA,Touch event delivered to Media app,8
+S1,Play a song from the touchscreen,2,APP_MEDIA,SVC_MEDIA,MediaController.play() over Binder,5
+S1,Play a song from the touchscreen,3,SVC_MEDIA,SVC_CAR,requestAudioFocus(GAIN),6
+S1,Play a song from the touchscreen,4,SVC_MEDIA,HAL_AUDIO,Open output stream and write PCM,15
+S1,Play a song from the touchscreen,5,HAL_AUDIO,HW_AUDIO,PCM over I2S to amplifier,20
+S2,Navigation prompt ducks media,1,HW_GPS,HAL_GNSS,GNSS fix received,20
+S2,Navigation prompt ducks media,2,HAL_GNSS,SVC_NAV,Location update,5
+S2,Navigation prompt ducks media,3,SVC_NAV,APP_NAV,Route progress: turn ahead,5
+S2,Navigation prompt ducks media,4,SVC_NAV,SVC_CAR,requestAudioFocus(TRANSIENT_MAY_DUCK),6
+S2,Navigation prompt ducks media,5,SVC_CAR,SVC_MEDIA,onAudioFocusChange(LOSS_TRANSIENT_CAN_DUCK),6
+S2,Navigation prompt ducks media,6,SVC_MEDIA,HAL_AUDIO,"Duck media volume, route prompt",10
+S2,Navigation prompt ducks media,7,HAL_AUDIO,HW_AUDIO,Mixed PCM to amplifier,20
+S3,Incoming call during projection,1,HW_PHONE,HAL_CONN,Call state change over projection link,15
+S3,Incoming call during projection,2,HAL_CONN,SVC_PROJ,Event to projection host,5
+S3,Incoming call during projection,3,SVC_PROJ,SVC_CAR,requestAudioFocus(GAIN_TRANSIENT),6
+S3,Incoming call during projection,4,SVC_CAR,SVC_MEDIA,onAudioFocusChange(LOSS_TRANSIENT),6
+S3,Incoming call during projection,5,SVC_MEDIA,HAL_AUDIO,"Pause media, flush stream",12
+S3,Incoming call during projection,6,SVC_PROJ,APP_PROJ,Render call screen,25
+S3,Incoming call during projection,7,HAL_AUDIO,HW_AUDIO,Route call audio to speakers,20
+S4,Reverse gear shows rear camera,1,HW_CAN,HAL_VHAL,Gear = REVERSE frame,10
+S4,Reverse gear shows rear camera,2,HAL_VHAL,SVC_CAR,VHAL property change event,5
+S4,Reverse gear shows rear camera,3,SVC_CAR,APP_SYS,Switch to rear-camera view,10

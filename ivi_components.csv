@@ -1,0 +1,18 @@
+component_id,name,layer,domain,subtitle,description,technology
+IN1,Head unit inputs,Input,All,"Touch, voice, steering keys","Driver interaction channels: capacitive touchscreen, voice assistant microphone array and steering-wheel keys.",Android InputManager
+APP_MEDIA,Media,Apps,Media,MediaBrowser API,"Music, radio and podcast app that browses and plays content.",Android Automotive media app
+APP_NAV,Navigation,Apps,Navigation,"Maps, routing","Map rendering, route guidance and turn-by-turn prompts.",Android Automotive navigation app
+APP_PROJ,Projection,Apps,Projection,AA / CarPlay,Renders the phone UI on the head unit (Android Auto or Apple CarPlay).,Projection client
+APP_SYS,System UI,Apps,Vehicle,"Launcher, HVAC","Launcher, status bar, climate and vehicle settings screens.",Car launcher / SystemUI
+SVC_MEDIA,Media service,Services,Media,MediaSession,"Owns playback sessions, queue and transport controls.",MediaSessionService
+SVC_NAV,Nav service,Services,Navigation,LocationManager,Delivers location fixes and manages guidance sessions.,LocationManagerService
+SVC_PROJ,Proj. service,Services,Projection,Video + input,"Hosts the projection session: video decode, input forwarding, audio routing.",Projection host service
+SVC_CAR,Car service,Services,Vehicle,CarAudioService,"Central automotive service: audio focus and zones, power, driving-state restrictions.",CarService
+HAL_AUDIO,Audio HAL,HAL,Media,AIDL audio,"Abstracts the audio DSP and amplifier for streams, volume and routing.",Audio HAL (AIDL)
+HAL_GNSS,GNSS HAL,HAL,Navigation,NMEA fixes,Abstracts the GNSS receiver and reports position fixes.,GNSS HAL (AIDL)
+HAL_CONN,Connectivity,HAL,Projection,"USB, BT, Wi-Fi","USB accessory, Bluetooth and Wi-Fi transports to the phone.",USB / BT / Wi-Fi stack
+HAL_VHAL,Vehicle HAL,HAL,Vehicle,VHAL properties,"Exposes vehicle properties (speed, gear, ignition) to Android.",Vehicle HAL (AIDL)
+HW_AUDIO,"Amp, speakers",Hardware,Media,"DSP, I2S","Audio DSP, power amplifier and speaker system.",I2S / TDM
+HW_GPS,GPS antenna,Hardware,Navigation,GNSS receiver,Active GNSS antenna and receiver chip.,UART / NMEA
+HW_PHONE,Phone,Hardware,Projection,Projected device,Driver's smartphone connected by cable or wireless link.,USB AOA / Wi-Fi
+HW_CAN,CAN bus,Hardware,Vehicle,"ECUs, sensors","Vehicle network connecting body, powertrain and safety ECUs.",CAN
